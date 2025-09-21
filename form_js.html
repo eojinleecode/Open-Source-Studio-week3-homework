@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Game Sign Up Page</title>
+  <style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background-color: #fff;
+  color: #333;
+}
+
+h2 {
+  text-align: center;
+  color: #ff6f61;
+  margin-bottom: 20px;
+}
+
+form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+form div, fieldset {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #555;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 8px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #ff6f61;
+  outline: none;
+  box-shadow: 0 0 5px rgba(255, 111, 97, 0.5);
+}
+
+select {
+  background-color: #f9f9f9;
+}
+
+textarea {
+  background-color: #fffaf0;
+}
+
+fieldset div {
+  border: 1px solid #87cefa;
+  padding: 10px;
+  border-radius: 8px;
+  display:inline-block;
+  width: 90%;
+  margin-right: 15px;
+  vertical-align: middle;
+}
+
+legend {
+  font-weight: bold;
+  color: #4682b4;
+}
+
+button {
+  width: 100%;
+  background: linear-gradient(45deg, #ff6f61, #ffcc70, #6a5acd);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  background-size: 200% 200%;
+  transition: background-position 0.5s;
+}
+
+button:hover {
+  background-position: right center;
+}
+  </style>
+  <script>
+    window.onload = function() {
+      const form = document.getElementById("myForm");
+      const username = document.querySelector("input[name='username']");
+      const password = document.querySelector("input[name='password']");
+      const passwordCheck = document.querySelector("input[name='password_check']");
+
+      username.onchange = function() {
+        console.log("아이디 변경됨:", this.value);
+      };
+      username.onmouseover = function() {
+        this.style.backgroundColor = "#f0f8ff";
+      };
+      username.onmouseout = function() {
+        this.style.backgroundColor = "";
+      };
+      password.onkeydown = function() {
+        console.log("비밀번호 입력 중...");
+      };
+
+      form.onsubmit = function(e) {
+        if (username.value.trim() === "") {
+          alert("아이디/이메일을 입력하세요.");
+          e.preventDefault();
+          return false;
+        }
+        if (password.value.length < 6) {
+          alert("비밀번호는 6자 이상이어야 합니다.");
+          e.preventDefault();
+          return false;
+        }
+        if (password.value !== passwordCheck.value) {
+          alert("비밀번호 확인이 일치하지 않습니다.");
+          e.preventDefault();
+          return false;
+        }
+        if (!confirm("제출하시겠습니까?")) {
+          e.preventDefault();
+          return false;
+        }
+      };
+    };
+  </script>
+</head>
+<body>
+  <h2>Sign up</h2>
+  <div>
+    <form id="myForm">
+      <div>
+        Enter the ID or Email to use:
+        <input type="text" name="username" required />
+      </div>
+      <div>
+        Enter Password to use (If possible, include special characters):
+        <input type="password" name="password" required />
+      </div>
+      <div>
+        Password check:
+        <input type="password" name="password_check" required />
+      </div>
+      <div>
+        Date of Birth:
+        <input type="date" name="birthdate" required />
+      </div>
+      <div>
+        continent / Server:
+        <select name="continent">
+          <option value="Asia">Asia</option>
+          <option value="America">America</option>
+          <option value="Europe">Europe</option>
+          <option value="Africa">Africa</option>
+          <option value="Oceania">Oceania</option>
+        </select>
+      </div>
+      <fieldset>
+        <legend>Gender</legend>
+        <div>
+          <input type="radio" id="female" name="gender" value="Female" />
+          <label for="female">Female</label>
+        </div>
+        <div>
+          <input type="radio" id="male" name="gender" value="Male" />
+          <label for="male">Male</label>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Check the Agreements</legend>
+        <div>
+          <input type="checkbox" name="age" required />
+          You are 14 years of age or older (required)
+        </div>
+        <div>
+          <input type="checkbox" name="conditions" required />
+          Terms and Conditions (required)
+        </div>
+        <div>
+          <input type="checkbox" name="user_information" required />
+          Collecting and using personal information (required)
+        </div>
+        <div>
+          <input type="checkbox" name="mail" />
+          Accept mail (optional)
+        </div>
+        <div>
+          <input type="checkbox" name="benefits" />
+          Accept receipt of benefits and event information (optional)
+        </div>
+        <div>
+          <input type="checkbox" name="collect" />
+          Collect and store identification information (optional)
+        </div>
+      </fieldset>
+      <div>
+        Sign:
+        <textarea name="additional_info" rows="4" cols="40" placeholder="Write your name..."></textarea>
+      <div>
+        <button type="submit">Sign up</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
+

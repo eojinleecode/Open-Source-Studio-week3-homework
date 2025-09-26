@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Game Sign Up Page</title>
+  
+</head>
+<body>
+  <h2>Sign up</h2>
+  <form id="myForm">
+    <div class="form-row">
+      <label for="username">Enter the ID or Email to use:</label>
+      <input type="text" id="username" name="username" required />
+    </div>
+    <div class="form-row">
+      <label for="password">Enter Password:</label>
+      <input type="password" id="password" name="password" required />
+    </div>
+    <div class="form-row">
+      <label for="password_check">Password check:</label>
+      <input type="password" id="password_check" name="password_check" required />
+    </div>
+    <div class="form-row">
+      <label for="birthdate">Date of Birth:</label>
+      <input type="date" id="birthdate" name="birthdate" required />
+    </div>
+    <div class="form-row">
+      <label for="continent">Continent / Server:</label>
+      <select id="continent" name="continent">
+        <option value="Asia">Asia</option>
+        <option value="America">America</option>
+        <option value="Europe">Europe</option>
+        <option value="Africa">Africa</option>
+        <option value="Oceania">Oceania</option>
+      </select>
+    </div>
+
+    <fieldset>
+      <legend>Gender</legend>
+      <div>
+        <input type="radio" id="female" name="gender" value="Female" />
+        <label for="female">Female</label>
+      </div>
+      <div>
+        <input type="radio" id="male" name="gender" value="Male" />
+        <label for="male">Male</label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Check the Agreements</legend>
+      <div>
+        <input type="checkbox" name="age" required />
+        You are 14 years of age or older (required)
+      </div>
+      <div>
+        <input type="checkbox" name="conditions" required />
+        Terms and Conditions (required)
+      </div>
+      <div>
+        <input type="checkbox" name="user_information" required />
+        Collecting and using personal information (required)
+      </div>
+      <div>
+        <input type="checkbox" name="mail" />
+        Accept mail (optional)
+      </div>
+      <div>
+        <input type="checkbox" name="benefits" />
+        Accept receipt of benefits and event information (optional)
+      </div>
+      <div>
+        <input type="checkbox" name="collect" />
+        Collect and store identification information (optional)
+      </div>
+    </fieldset>
+
+    <div class="form-row">
+      <label for="additional_info">Sign:</label>
+      <textarea id="additional_info" name="additional_info" rows="4" placeholder="Write your name..."></textarea>
+    </div>
+
+    <button type="submit">Sign up</button>
+  </form>
+</body>
+</html>
